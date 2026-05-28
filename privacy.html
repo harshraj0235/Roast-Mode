@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Website Roast AI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f0f13;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        h1, h2 {
+            color: #ff9f43;
+            margin-top: 30px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+        .date {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        p, li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        a {
+            color: #ff4757;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #fff;
+            background: #333;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .back-btn:hover {
+            background: #555;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="back-btn">&larr; Back to Home</a>
+        
+        <h1>Privacy Policy</h1>
+        <div class="date">Last Updated: May 28, 2026</div>
+
+        <p>Website Roast AI ("the Extension") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and handle your data.</p>
+
+        <h2>1. Data Collection</h2>
+        <p>We believe in absolute data minimization. The Extension <strong>does not</strong> collect, store, or transmit your personal data, browsing history, or keystrokes to our servers.</p>
+        <p>When you click "Start AI Roast," the Extension extracts the following data from the <em>currently active tab</em>:</p>
+        <ul>
+            <li>Page URL</li>
+            <li>Page Title & Meta Description</li>
+            <li>Headings and Button text</li>
+            <li>A small sample of paragraph text</li>
+        </ul>
+        <p>This data is sent securely via a temporary, one-time payload to <strong>Pollinations AI</strong> (our third-party AI provider) to generate the roast text and analytical feedback.</p>
+
+        <h2>2. Third-Party Services</h2>
+        <ul>
+            <li><strong>Pollinations AI</strong>: We use Pollinations API to generate the roast content. Their use of data is governed by their own privacy policies. We do not send any user-identifiable information to them.</li>
+            <li><strong>Razorpay</strong>: If you choose to upgrade to the Premium Plan, payments are processed securely by Razorpay. We never see, touch, or store your credit card information.</li>
+        </ul>
+
+        <h2>3. Data Storage</h2>
+        <p>Any gamification ranks, roast limits, and premium license keys are stored locally on your device using Chrome's <code>chrome.storage.local</code>. This data never leaves your browser and is never uploaded to any remote database.</p>
+
+        <h2>4. Permissions Used</h2>
+        <ul>
+            <li><code>activeTab</code>: Used strictly to read the text of the webpage you actively click "Roast" on.</li>
+            <li><code>scripting</code>: Used to highlight bad UX elements and inject visual effects (like the Eye Tracking heatmap) on the active page.</li>
+            <li><code>storage</code>: Used to save your gamification rank and premium license key locally.
+            <li><code>tts</code>: Used for the optional AI Voice roast feature.</li>
+        </ul>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have any questions about this Privacy Policy, please contact the developer via the GitHub repository or the Chrome Web Store support tab.</p>
+    </div>
+
+</body>
+</html>
