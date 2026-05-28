@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Website Roast AI: UX & Landing Page Audit",
+  "version": "1.0.0",
+  "description": "Get brutally honest AI website audits. Instantly analyze UX, UI design, copywriting, SEO, and conversion rates to fix landing pages.",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Roast This Website",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "scripting",
+    "storage",
+    "sidePanel",
+    "tts"
+  ],
+  "host_permissions": [
+    "https://text.pollinations.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

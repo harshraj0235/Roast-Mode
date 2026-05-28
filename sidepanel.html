@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Roast My Website</title>
+    <link rel="stylesheet" href="sidepanel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>🔥 AI Roast</h1>
+    </div>
+
+    <div id="premiumBanner" class="premium-banner" style="background: linear-gradient(90deg, #f1c40f, #f39c12); padding: 12px; text-align: center; font-weight: bold; cursor: pointer; color: #000;">
+        💎 Upgrade to Premium (₹199/mo)
+    </div>
+    
+    <div id="gamificationBanner" class="gamification hidden">
+        <span id="userLevel">Beginner Founder</span>
+        <span id="roastsRemaining">3/3 Free Roasts</span>
+    </div>
+
+    <div id="mainView" class="view active">
+        <div class="action-grid" style="margin-bottom: 20px;">
+            <button class="btn primary-btn" id="roastBtn">🔥 Start AI Roast</button>
+            <button class="btn secondary" id="btnHoverTrack" style="grid-column: span 2;">🔍 Live Hover Analysis</button>
+        </div>
+        <p class="subtitle">Brutally honest feedback for the current page.</p>
+
+        <div class="mode-selector">
+            <label for="roastMode">Select Persona:</label>
+            <select id="roastMode" class="styled-select">
+                <option value="savage">Savage (Gordon Ramsay)</option>
+                <option value="genz">Gen-Z Troll</option>
+                <option value="investor">Angry VC</option>
+                <option value="ceo">Ruthless CEO</option>
+                <option value="ux">UX Snob</option>
+                <option value="reddit">Reddit Reviewer</option>
+                <option value="hacker">Cyber Hacker</option>
+                <option value="indian">Indian Startup Uncle</option>
+            </select>
+            <div style="margin-top:10px; display:flex; align-items:center; gap:8px;">
+                <input type="checkbox" id="voiceToggle" checked>
+                <label for="voiceToggle" style="font-size:12px; color:var(--text-secondary); margin:0;">Enable AI Voice 🗣️</label>
+            </div>
+        </div>
+        <div id="errorBox" class="error hidden" style="margin-top: 15px;"></div>
+    </div>
+
+    <div id="loadingView" class="view">
+        <div class="loader">🔥</div>
+        <p class="loading-text" id="loadingText">Analyzing trust issues...</p>
+    </div>
+
+    <div id="resultView" class="view">
+        <div id="damageContainer">
+            <div class="roast-card">
+                <h2>THE VERDICT</h2>
+                <p class="roast-text" id="roastText">...</p>
+            </div>
+            
+            <div class="why-fails">
+                <strong>Why it fails:</strong> <span id="whyFailsText">...</span>
+            </div>
+
+            <div class="card result-card deep-metric">
+                <h3>🧠 Website IQ</h3>
+                <div class="score-row">
+                    <span>Design IQ: <span id="designIqScore">0</span></span>
+                    <div class="progress-bar"><div class="progress-fill" style="background:#ff4757;" id="designIqProgress"></div></div>
+                </div>
+            </div>
+
+            <div class="viral-metrics deep-metric">
+                <div class="metric-row">
+                    <span class="metric-label">Founder Coping Level:</span>
+                    <span class="metric-value" id="founderCopingText">...</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Startup Bro Stereotype:</span>
+                    <span class="metric-value" id="startupBroText">...</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Dark Patterns:</span>
+                    <span class="metric-value" id="darkPatternsText">...</span>
+                </div>
+            </div>
+
+        
+        <div class="card result-card">
+            <h3>❤️ Founder Therapy</h3>
+            <p id="therapyText" style="font-style: italic; color: var(--text-secondary);">...</p>
+        </div>
+
+        <div class="card result-card">
+            <h3>💼 AI Business Coach</h3>
+            <ul id="businessAdviceList" style="margin: 0; padding-left: 20px; font-size: 13px; color: var(--text-secondary);">
+                <li>...</li>
+            </ul>
+        </div>
+
+        <div class="card result-card deep-metric">
+            <h3>📊 Would Users Trust This?</h3>
+            <div class="score-row">
+                <span>Scam Probability: <span id="scamScore">0</span>%</span>
+                <div class="progress-bar"><div class="progress-fill danger" id="scamProgress"></div></div>
+            </div>
+        </div>
+
+        <div class="card result-card meme-card">
+            <h3>🤡 Expectation vs Reality</h3>
+            <div class="meme-container">
+                <div class="meme-text" id="memeText">...</div>
+            </div>
+        </div>
+
+        </div> <!-- End damage container -->
+
+        <div class="action-grid" style="margin-top:20px;">
+            <button class="btn secondary premium-action" id="btnRewrite">✨ Rewrite Page 🔒</button>
+            <button class="btn secondary premium-action" id="btnRedFlags">🚩 Red Flags 🔒</button>
+            <button class="btn secondary premium-action" id="btnEyeTrack">👁️ Eye Track 🔒</button>
+            <button class="btn secondary premium-action" id="btnExportPdf" style="grid-column: span 3; background: #2ecc71; color: white; border: none;">📄 Export Audit PDF 🔒</button>
+        </div>
+
+        <div id="competitorBattleBox" style="margin-top: 15px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px;">
+            <h3 style="margin-top:0;">🥊 Competitor Battle</h3>
+            <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px;">Who's stealing your customers?</p>
+            <div style="display: flex; gap: 8px;">
+                <input type="text" id="competitorUrl" placeholder="https://competitor.com" style="flex: 1; padding: 8px; border-radius: 4px; border: 1px solid #444; background: #111; color: white;">
+                <button id="btnBattle" class="btn premium-action" style="background: #e74c3c; color: white;">Battle 🔒</button>
+            </div>
+            <div id="battleResult" style="margin-top: 10px; font-size: 13px; font-weight: bold; color: #ff9f43; display: none;"></div>
+        </div>
+
+        <div class="button-group" style="flex-wrap: wrap;">
+            <button class="btn" id="shareBtnX" style="background:#000; color:#fff; flex: 1;">🐦 X</button>
+            <button class="btn" id="shareBtnReddit" style="background:#ff4500; color:#fff; flex: 1;">👽 Reddit</button>
+            <button class="btn" id="shareBtnLinkedIn" style="background:#0077b5; color:#fff; flex: 1;">💼 LinkedIn</button>
+        </div>
+        <button class="btn secondary" id="backBtn" style="margin-top: 10px;">⬅️ Roast Another Website</button>
+
+        <div class="viral-metrics">
+            <div class="metric-row">
+                <span class="metric-label">Vibe:</span>
+                <span id="personalityText" class="metric-value">...</span>
+            </div>
+            <div class="metric-row">
+                <span class="metric-label">Rich Score:</span>
+                <span id="richScoreText" class="metric-value">...</span>
+            </div>
+        </div>
+
+        <div class="scores">
+            <div class="score-card">
+                <div class="score-title">Conversion</div>
+                <div class="score-value" id="conversionScore">0</div>
+                <div class="score-max">/ 100</div>
+            </div>
+            <div class="score-card">
+                <div class="score-title">Trust</div>
+                <div class="score-value" id="trustScore">0</div>
+                <div class="score-max">/ 100</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="unlockContainer" style="padding: 15px; border-top: 1px solid #333; background: #000; position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;">
+        <p style="font-size: 12px; color: #888; margin-bottom: 8px;">Already bought Premium? Enter License Key:</p>
+        <div style="display: flex; gap: 10px;">
+            <input type="text" id="licenseKeyInput" placeholder="ROAST-PRO-..." style="flex: 1; padding: 8px; border-radius: 4px; border: 1px solid #444; background: #111; color: white;">
+            <button id="btnUnlock" class="btn" style="background: #2ecc71; color: white; padding: 8px 12px;">Unlock</button>
+        </div>
+    </div>
+
+    <script src="sidepanel.js"></script>
+</body>
+</html>
